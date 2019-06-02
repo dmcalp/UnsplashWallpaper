@@ -23,8 +23,7 @@ public class Main {
 		boolean SystemParametersInfo(int one, int two, String s, int three);
 	}
 	
-	public static void main(String[] args) {
-		
+	public static void main(String[] args) {		
 		// download random image from source.unsplash.com and set it as desktop background before deleting it
 		try (InputStream in = new URL(BASEURL+RES).openStream()) {
 			File img = new File("D:\\Pictures\\DesktopBackgrounds\\image.jpg");
@@ -33,10 +32,8 @@ public class Main {
 			User32.INSTANCE.SystemParametersInfo(0x0014, 0, path, 1);
 			TimeUnit.SECONDS.sleep(1);
 			img.delete();
-		} catch (IOException e) {
-			e.printStackTrace();
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
+		} 
+		catch (IOException e) {e.printStackTrace();}
+		catch (InterruptedException e) {e.printStackTrace();}
 	}	
 }
