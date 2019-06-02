@@ -17,13 +17,13 @@ public class Main {
 	private final static String RES = "2560x1440";
 	private final static String BASEURL = "https://source.unsplash.com/random/";
 	
-	// windows stuff
 	public static interface User32 extends Library {		
 		User32 INSTANCE = (User32) Native.load("user32", User32.class, W32APIOptions.DEFAULT_OPTIONS);
 		boolean SystemParametersInfo(int one, int two, String s, int three);
 	}
 	
-	public static void main(String[] args) {		
+	public static void main(String[] args) {
+		
 		// download random image from source.unsplash.com and set it as desktop background before deleting it
 		try (InputStream in = new URL(BASEURL+RES).openStream()) {
 			File img = new File("D:\\Pictures\\DesktopBackgrounds\\image.jpg");
