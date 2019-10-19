@@ -19,7 +19,7 @@ public class Main {
 	
 	public static interface User32 extends Library {		
 		User32 INSTANCE = (User32) Native.load("user32", User32.class, W32APIOptions.DEFAULT_OPTIONS);
-		boolean SystemParametersInfo(int one, int two, String s, int three);
+		boolean SystemParametersInfo(int uiAction, int uiParam, String pvParam, int fWinIni);
 	}
 	
 	public static void main(String[] args) {
